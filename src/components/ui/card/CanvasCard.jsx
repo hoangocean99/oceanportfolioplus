@@ -10,6 +10,7 @@ import './CanvasCard.css'
 export default function CanvasCard({ mode, imageUrl = (mode === "dark") ? '/ImageCardDark.jpg' : '/ImageCardLight.jpg', cardSize = { w: 2.4, h: 3.2, t: 0.10 }, strapLength = -2 }) {
   const mountRef = useRef(null);
   const rafRef = useRef(0);
+  const { w, h, t } = cardSize;
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -40,7 +41,6 @@ export default function CanvasCard({ mode, imageUrl = (mode === "dark") ? '/Imag
 
     // Card
     const cardScale = isMobile ? 0.75 : 1;
-    const { w, h, t } = cardSize;
     const geo = new RoundedBoxGeometry(w * cardScale, h * cardScale, t * cardScale, 8, 0.18 * cardScale);
 
     // Textures
@@ -330,7 +330,7 @@ export default function CanvasCard({ mode, imageUrl = (mode === "dark") ? '/Imag
       mount.removeChild(renderer.domElement);
       renderer.dispose();
     };
-  }, [mode, imageUrl, cardSize.w, cardSize.h, cardSize.t, strapLength]);
+  }, [mode, imageUrl, w, h, t, strapLength]);
   return (
     <div ref={mountRef} className="w-full h-full w-100 h-100 d-flex justify-content-center align-items-center contain-card"></div>
   );
