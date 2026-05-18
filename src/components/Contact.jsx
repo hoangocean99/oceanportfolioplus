@@ -16,9 +16,15 @@ export default function Contact() {
     const [replyingTo, setReplyingTo] = useState(null);
 
     const messagesEndRef = useRef(null);
+    const messagesContainerRef = useRef(null);
 
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        if (messagesContainerRef.current) {
+            messagesContainerRef.current.scrollTo({
+                top: messagesContainerRef.current.scrollHeight,
+                behavior: "smooth"
+            });
+        }
     };
 
     // Theo dõi trạng thái đăng nhập
@@ -177,7 +183,7 @@ export default function Contact() {
                         {/* Chat Area */}
                         <div className="flex-1 flex flex-col min-h-0">
                             {/* Messages */}
-                            <div className="flex-1 p-6 overflow-y-auto flex flex-col gap-6" data-lenis-prevent>
+                            <div ref={messagesContainerRef} className="flex-1 p-6 overflow-y-auto flex flex-col gap-6" data-lenis-prevent>
                                 {commMessages.length === 0 ? (
                                     <div className="text-center text-ink opacity-50 font-mono text-sm mt-10">
                                         No messages yet. Say hi!
