@@ -83,10 +83,22 @@ Ví dụ: "Tôi sẽ đưa bạn đến phần dự án nhé! [NAVIGATE: project
             });
 
             const data = await response.json();
-            if (data.candidates && data.candidates[0].content.parts[0].text) {
+            console.log("Gemini API Response:", data);
+
+            if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
                 return data.candidates[0].content.parts[0].text;
+            } else if (data.error) {
+                console.error("Gemini API Error:", data.error);
+                return `Lỗi API (${data.error.code}): ${data.error.message}`;
+            } else if (data.candidates && data.candidates[0]?.finishReason) {
+                console.warn("Gemini Finish Reason:", data.candidates[0].finishReason);
+                if (data.candidates[0].finishReason === "SAFETY") {
+                    return "Xin lỗi, câu trả lời bị chặn do vi phạm chính sách an toàn.";
+                }
+                return `Xin lỗi, không thể tạo câu trả lời. Lý do: ${data.candidates[0].finishReason}`;
             } else {
-                return "Xin lỗi, tôi gặp sự cố khi xử lý câu trả lời.";
+                console.error("Gemini Unexpected Response:", data);
+                return "Xin lỗi, tôi gặp sự cố khi xử lý câu trả lời. Hãy kiểm tra console để biết chi tiết.";
             }
         } catch (error) {
             console.error("Error calling Gemini:", error);

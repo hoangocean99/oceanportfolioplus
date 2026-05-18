@@ -25,7 +25,7 @@ export default function About({ isDark }) {
             className="relative min-h-[100vh] flex flex-col lg:flex-row items-center py-20 lg:py-32 overflow-hidden"
         >
             <div
-                className={`relative lg:absolute top-0 left-0 w-full lg:w-[45%] h-[400px] lg:h-full pointer-events-auto transition-transform duration-1000 ease-out transform ${isVisible ? "translate-y-0" : "translate-y-20 opacity-0"
+                className={`z-20 relative lg:absolute top-0 left-0 w-full lg:w-[45%] h-[400px] lg:h-full pointer-events-auto transition-transform duration-1000 ease-out transform ${isVisible ? "translate-y-0" : "translate-y-20 opacity-0"
                     }`}
             >
                 <CanvasCard mode={isDark ? "dark" : "light"} />
