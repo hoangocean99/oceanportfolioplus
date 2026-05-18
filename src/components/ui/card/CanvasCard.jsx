@@ -330,7 +330,7 @@ export default function CanvasCard({ mode, imageUrl = (mode === "dark") ? '/Imag
       mount.removeChild(renderer.domElement);
       renderer.dispose();
     };
-  }, [mode, imageUrl, cardSize, strapLength]);
+  }, [mode, imageUrl, cardSize.w, cardSize.h, cardSize.t, strapLength]);
   return (
     <div ref={mountRef} className="w-full h-full w-100 h-100 d-flex justify-content-center align-items-center contain-card"></div>
   );
