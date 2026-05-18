@@ -1,0 +1,10 @@
+.contain-card {
+    cursor: grab;
+    background-color: transparent !important;
+}
+
+.contain-card :active {
+    cursor: grabbing;
+    background-color: transparent !important;
+
+}
