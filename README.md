@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# 🌊 Ocean Portfolio Plus
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Three.js](https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
-## Available Scripts
+Một dự án Portfolio cá nhân đỉnh cao, kết hợp giữa trải nghiệm **3D sống động** và các tính năng tương tác cộng đồng thời gian thực. Được thiết kế với tâm huyết để mang lại ấn tượng mạnh mẽ ngay từ cái nhìn đầu tiên.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Tính năng nổi bật
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **🎨 Thiết kế Premium**: Giao diện hiện đại với hiệu ứng Glassmorphism, màu sắc hài hòa và hỗ trợ hoàn hảo cả Chế độ Sáng/Tối (Light/Dark Mode).
+- **🌐 Trải nghiệm 3D Hoành tráng**: Tích hợp các mô hình 3D tương tác sử dụng `@react-three/fiber` và `three.js`, tạo không gian sống động.
+- **💬 Community Hub**: Phòng chat cộng đồng thời gian thực được hỗ trợ bởi Firebase, cho phép mọi người kết nối.
+- **🤖 AI Chatbot**: Chatbot hỗ trợ thông minh luôn sẵn sàng trả lời các câu hỏi của khách truy cập.
+- **🌀 Hiệu ứng mượt mà**: Sử dụng Framer Motion, GSAP và Lenis cho trải nghiệm cuộn và chuyển cảnh mượt mà, không giật lag.
+- **📊 Biểu đồ trực quan**: Hiển thị kỹ năng và thông tin bằng Recharts một cách chuyên nghiệp.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Công nghệ sử dụng
 
-### `npm test`
+### Frontend
+- **Thư viện chính**: React 18
+- **Tạo kiểu (Styling)**: Tailwind CSS + `tailwindcss-animate`
+- **Chuyển động (Animations)**: Framer Motion + GSAP
+- **Xử lý 3D**: Three.js + React Three Fiber + Drei
+- **Thành phần UI**: Radix UI (Đảm bảo tính tiếp cận và linh hoạt)
+- **Icons**: Lucide React + FontAwesome
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Dịch vụ & Công cụ khác
+- **Backend as a Service**: Firebase (Authentication & Firestore cho Chat Hub)
+- **Quản lý trạng thái & Form**: React Hook Form + Zod
+- **Cuộn mượt (Smooth Scroll)**: Lenis
+- **Thư viện Toasts**: Sonner
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Cài đặt và Chạy thử
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Để chạy dự án này trên máy của bạn, hãy làm theo các bước sau:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📋 Yêu cầu hệ thống
+- Node.js (Phiên bản 16 trở lên)
+- npm hoặc yarn
 
-### `npm run eject`
+### 🔧 Các bước thực hiện
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/HoangOcean99/OceanPortfolioPlus.git
+   cd OceanPortfolioPlus
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Cài đặt các thư viện phụ thuộc:**
+   ```bash
+   npm install
+   # Hoặc nếu bạn dùng yarn
+   yarn install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Cấu hình biến môi trường:**
+   Tạo tệp `.env` ở thư mục gốc (nếu chưa có) và điền các thông tin cấu hình Firebase của bạn (tham khảo tệp `.env` hiện tại).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Chạy ứng dụng ở chế độ phát triển:**
+   ```bash
+   npm start
+   # Hoặc
+   yarn start
+   ```
+   Ứng dụng sẽ chạy tại [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+5. **Xây dựng bản production:**
+   ```bash
+   npm run build
+   # Hoặc
+   yarn build
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📸 Ảnh chụp màn hình
 
-### Code Splitting
+> [!TIP]
+> Hãy thay thế các đường link dưới đây bằng ảnh chụp màn hình thực tế từ dự án của bạn để tăng tính thuyết phục!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Giao diện chính (Hero Section) | Phòng Chat Cộng Đồng (Community Chat) |
+| :---: | :---: |
+| ![Hero](https://via.placeholder.com/600x350?text=Hero+Section+Screenshot) | ![Chat](https://via.placeholder.com/600x350?text=Community+Chat+Screenshot) |
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📄 Giấy phép
 
-### Making a Progressive Web App
+Dự án này được tạo bởi **Hoang Ocean**. Bạn có thể tự do sử dụng và tùy chỉnh cho mục đích cá nhân.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Thực hiện với ❤️ bởi [Hoang Ocean](https://github.com/HoangOcean99)
